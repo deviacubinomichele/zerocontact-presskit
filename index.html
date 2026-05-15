@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO CONTACT: The Secret Documents - Press Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #00ff00;
+            --text-color: #e0e0e0;
+            --secondary-text: #888;
+            --card-bg: #151515;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .redacted {
+            background-color: #000;
+            color: #000;
+            cursor: help;
+            transition: all 0.3s ease;
+            padding: 0 4px;
+        }
+
+        .redacted:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), var(--bg-color)), url('01_Logo_and_KeyArt/keyart.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+        }
+
+        /* Trailer */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .screenshot-grid img {
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+            image-rendering: pixelated;
+        }
+
+        .screenshot-grid img:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-color);
+        }
+
+        /* Fact Sheet Table */
+        .fact-sheet {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .fact-sheet td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .fact-sheet td:first-child {
+            font-weight: bold;
+            color: var(--accent-color);
+            width: 30%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--accent-color);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'JetBrains Mono', monospace;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            background-color: #00cc00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+        }
+
+        /* About Section */
+        .about-dev {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+        }
+
+        /* Language selector in nav */
+        .lang-select-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-select {
+            background: rgba(0, 255, 0, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            padding: 4px 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+            appearance: auto;
+        }
+
+        .lang-select:hover {
+            border-color: var(--accent-color);
+        }
+
+        .lang-select option {
+            background: #151515;
+            color: var(--text-color);
+        }
+
+        /* Language page visibility */
+        .lang-page {
+            display: none;
+        }
+
+        .lang-page.active {
+            display: block;
+        }
+
+        /* RTL overrides */
+        [dir="rtl"] h2 {
+            border-right: 3px solid var(--accent-color);
+            padding-right: 15px;
+        }
+
+        [dir="rtl"] nav a {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        [dir="rtl"] ul {
+            padding-right: 0;
+        }
+
+        [dir="rtl"] .fact-sheet td:first-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="font-weight: bold; color: var(--accent-color);">ZERO CONTACT</div>
+                <div class="lang-select-wrapper">
+                    <select class="lang-select" id="langSelect" onchange="switchLang(this.value)">
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <!--<option value="pt-br">Português (BR)</option>
+          <option value="pt-pt">Português (PT)</option>
+          <option value="ru">Русский</option>
+          <option value="tr">Türkçe</option>-->
+          <option value="ja">日本語</option>
+          <!--<option value="zh-cn">简体中文</option>
+          <option value="zh-tw">繁體中文</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ar">العربية</option>
+          <option value="ur">اردو</option>
+          <option value="id">Indonesia</option>
+          <option value="pl">Polski</option>-->
+          <option value="sq">Shqip</option>
+          <!--<option value="ro">Română</option>-->
+                    </select>
+                </div>
+            </div>
+            <div id="navLinks">
+                <a href="javascript:void(0)" onclick="scrollToSection('trailer')" id="navTrailer">Trailer</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('factsheet')" id="navFactsheet">Fact Sheet</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('download')" id="navDownload">Download</a>
+            </div>
+        </div>
+    </nav>
+
+  <!-- ═══ English (EN) ═══ -->
+  <div class="lang-page" data-lang="en">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">A premium stealth experience for Android. No ads. No contact. <span class="redacted">No trace.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">DOWNLOAD PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Watch the Trailer</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Description</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>In <strong>ZERO CONTACT: The Secret Documents</strong>, you step into the shoes of Agent Green on a high-stakes mission to recover <span class="redacted">TOP SECRET</span> documents.</p>
+            <br>
+            <p>The game takes a "Premium First" approach: pay once, play forever. No ad interruptions or microtransactions.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 handcrafted levels</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Hacking puzzles</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Spy storyline with original dialogues</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 upgrades and abilities</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Friend leaderboard</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Stats, unlockable ranks and uniforms</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Immersive music and sound effects</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>High replayability</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art with light and dark mode</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Screenshots</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Fact Sheet</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Developer</td>
+                <td>Michele Iacubino<br>Based in Italy</td>
+            </tr>
+            <tr>
+                <td>Release Date</td>
+                <td>June 6, 2026</td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>The Prologue: Free<br>The Secret Documents: $1.99</td>
+            </tr>
+            <tr>
+                <td>Languages</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Social</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Download Press Kit</h2>
+        <p style="margin-top: 20px;">Access all logos, HD screenshots and original trailers on Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">GO TO DRIVE FOLDER</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">For press version access: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>The Development</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT was designed and developed entirely by a single person. It was born from the desire to create a mobile experience that respects the player: no ads, no in-app purchases, just pure gameplay. A stealth game designed for touch controls from day one.</p>
+            <h3 style="margin-top: 25px;">Coming Soon</h3>
+            <p style="margin-top: 15px;">Coming soon: support for additional languages and a new game mode: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. All rights reserved.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Italiano (IT) ═══ -->
+  <div class="lang-page" data-lang="it">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Un'esperienza stealth premium per Android. Nessuna pubblicità. Nessun contatto. <span class="redacted">Nessuna traccia.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">SCARICA PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Guarda il Trailer</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <!-- Sostituisci [ID_VIDEO_YOUTUBE] con l'ID reale -->
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Descrizione</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>In <strong>ZERO CONTACT: The Secret Documents</strong>, vesti i panni dell'Agente Green in una missione ad alto rischio per recuperare documenti <span class="redacted">TOP SECRET</span>.</p>
+            <br>
+            <p>Il gioco offre un approccio "Premium First": paghi una volta, giochi per sempre. Senza interruzioni pubblicitarie o microtransazioni.</p>
+            
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 livelli creati a mano</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Puzzle di hacking</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Trama spy con dialoghi originali</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 potenziamenti e abilità</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Classifica amici</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Statistiche, gradi e divise sbloccabili</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Musiche ed effetti sonori coinvolgenti</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Alta rigiocabilità</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art con modalità chiara e scura</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Screenshot</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Fact Sheet</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Sviluppatore</td>
+                <td>Michele Iacubino<br>Basato in Italia</td>
+            </tr>
+            <tr>
+                <td>Data di Uscita</td>
+                <td>6 giugno 2026</td>
+            </tr>
+            <tr>
+                <td>Piattaforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Prezzo</td>
+                <td>The Prologue: Gratis<br>The Secret Documents: 1,99 €</td>
+            </tr>
+            <tr>
+                <td>Lingue</td>
+                <td>IT, EN, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Sito Web</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Social</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Download Press Kit</h2>
+        <p style="margin-top: 20px;">Accedi a tutti i loghi, screenshot HD e trailer originali su Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">VAI ALLA CARTELLA DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Per accesso alla versione per la stampa: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Lo Sviluppo</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT è stato progettato e sviluppato interamente da una sola persona. Nasce dal desiderio di creare un'esperienza mobile che rispetti il giocatore: niente pubblicità, niente acquisti in-app, solo gameplay puro. Un gioco stealth pensato per i controlli touch fin dal primo giorno.</p>
+            <h3 style="margin-top: 25px;">In Arrivo a Breve</h3>
+            <p style="margin-top: 15px;">Sono in arrivo il supporto ad altre lingue e l'introduzione di una nuova modalità di gioco: la "Sfida a tempo".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Français (FR) ═══ -->
+  <div class="lang-page" data-lang="fr">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Une exp&#233;rience stealth premium sur Android. Sans publicit&#233;. Sans contact. <span class="redacted">Sans trace.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">T&#201;L&#201;CHARGER LE PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Voir la bande-annonce</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Description</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>Dans <strong>ZERO CONTACT: The Secret Documents</strong>, vous incarnez l'Agent Green dans une mission &#224; haut risque pour r&#233;cup&#233;rer des documents <span class="redacted">TOP SECRET</span>.</p>
+            <br>
+            <p>Le jeu adopte une approche &#171; Premium First &#187; : payez une fois, jouez pour toujours. Aucune interruption publicitaire ni microtransaction.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 niveaux faits main</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>Puzzles de hacking</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>Sc&#233;nario d'espionnage avec dialogues originaux</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 am&#233;liorations et capacit&#233;s</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>Classement entre amis</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>Statistiques, rangs et uniformes d&#233;blocables</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>Musique et effets sonores immersifs</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>Grande rejouabilité</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>Pixel art avec mode clair et sombre</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Captures d'&#233;cran</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Fiche technique</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>D&#233;veloppeur</td>
+                <td>Michele Iacubino<br>Bas&#233; en Italie</td>
+            </tr>
+            <tr>
+                <td>Date de sortie</td>
+                <td>6 juin 2026</td>
+            </tr>
+            <tr>
+                <td>Plateforme</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Prix</td>
+                <td>The Prologue : Gratuit<br>The Secret Documents : 1,99 &#8364;</td>
+            </tr>
+            <tr>
+                <td>Langues</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Site web</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>R&#233;seaux sociaux</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>T&#233;l&#233;charger le Press Kit</h2>
+        <p style="margin-top: 20px;">Acc&#233;dez &#224; tous les logos, captures d'&#233;cran HD et trailers originaux sur Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">ACC&#201;DER AU DOSSIER DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Pour accéder à la version presse : <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Le d&#233;veloppement</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT a &#233;t&#233; con&#231;u et d&#233;velopp&#233; enti&#232;rement par une seule personne. Il est n&#233; du d&#233;sir de cr&#233;er une exp&#233;rience mobile qui respecte le joueur : pas de publicit&#233;, pas d'achats int&#233;gr&#233;s, juste du gameplay pur. Un jeu d'infiltration con&#231;u pour les commandes tactiles d&#232;s le premier jour.</p>
+            <h3 style="margin-top: 25px;">Bient&#244;t disponible</h3>
+            <p style="margin-top: 15px;">La prise en charge de langues suppl&#233;mentaires et l'introduction d'un nouveau mode de jeu sont &#224; venir : le &#171; Time Attack &#187;.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Tous droits r&#233;serv&#233;s.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Deutsch (DE) ═══ -->
+  <div class="lang-page" data-lang="de">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Ein Premium-Stealth-Erlebnis f&#252;r Android. Keine Werbung. Kein Kontakt. <span class="redacted">Keine Spur.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">PRESS KIT HERUNTERLADEN</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Trailer ansehen</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Beschreibung</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>In <strong>ZERO CONTACT: The Secret Documents</strong> schl&#252;pfst du in die Rolle von Agent Green auf einer hochriskanten Mission zur Bergung <span class="redacted">STRENG GEHEIMER</span> Dokumente.</p>
+            <br>
+            <p>Das Spiel verfolgt einen &#8222;Premium First&#8220;-Ansatz: Einmal bezahlen, f&#252;r immer spielen. Keine Werbeunterbrechungen oder Mikrotransaktionen.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 handgefertigte Level</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>Hacking-Puzzles</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>Spionage-Story mit originalen Dialogen</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 Upgrades und F&#228;higkeiten</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>Freunde-Rangliste</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>Statistiken, freischaltbare R&#228;nge und Uniformen</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>Immersive Musik und Soundeffekte</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>Hoher Wiederspielwert</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>Pixel Art mit hellem und dunklem Modus</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Screenshots</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Factsheet</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Entwickler</td>
+                <td>Michele Iacubino<br>Standort: Italien</td>
+            </tr>
+            <tr>
+                <td>Ver&#246;ffentlichungsdatum</td>
+                <td>6. Juni 2026</td>
+            </tr>
+            <tr>
+                <td>Plattform</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Preis</td>
+                <td>The Prologue: Kostenlos<br>The Secret Documents: 1,99 &#8364;</td>
+            </tr>
+            <tr>
+                <td>Sprachen</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Webseite</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Social Media</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Press Kit herunterladen</h2>
+        <p style="margin-top: 20px;">Alle Logos, HD-Screenshots und Original-Trailer auf Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">ZUM DRIVE-ORDNER</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">F&#252;r Pressversion-Zugang: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Die Entwicklung</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT wurde vollst&#228;ndig von einer einzigen Person entworfen und entwickelt. Es entstand aus dem Wunsch, ein mobiles Erlebnis zu schaffen, das den Spieler respektiert: keine Werbung, keine In-App-K&#228;ufe, nur reines Gameplay. Ein Stealth-Spiel, das von Anfang an f&#252;r Touch-Steuerung konzipiert wurde.</p>
+            <h3 style="margin-top: 25px;">Demnächst verfügbar</h3>
+            <p style="margin-top: 15px;">Demnächst verfügbar: Unterstützung weiterer Sprachen und ein neuer Spielmodus: „Time Attack“.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Español (ES) ═══ -->
+  <div class="lang-page" data-lang="es">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Una experiencia stealth premium en Android. Sin anuncios. Sin contacto. <span class="redacted">Sin rastro.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">DESCARGAR PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Ver el tr&#225;iler</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Descripci&#243;n</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>En <strong>ZERO CONTACT: The Secret Documents</strong>, te pones en la piel del Agente Green en una misi&#243;n de alto riesgo para recuperar documentos <span class="redacted">ULTRA SECRETOS</span>.</p>
+            <br>
+            <p>El juego adopta un enfoque "Premium First": paga una vez, juega para siempre. Sin interrupciones publicitarias ni microtransacciones.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 niveles hechos a mano</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>Puzzles de hacking</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>Historia de espionaje con di&#225;logos originales</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 mejoras y habilidades</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>Clasificaci&#243;n entre amigos</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>Estad&#237;sticas, rangos y uniformes desbloqueables</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>M&#250;sica y efectos de sonido inmersivos</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>Alta rejugabilidad</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>Pixel art con modo claro y oscuro</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Capturas de pantalla</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Ficha t&#233;cnica</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Desarrollador</td>
+                <td>Michele Iacubino<br>Radicado en Italia</td>
+            </tr>
+            <tr>
+                <td>Fecha de lanzamiento</td>
+                <td>6 de junio de 2026</td>
+            </tr>
+            <tr>
+                <td>Plataforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td>Pr&#243;logo: Gratis<br>The Secret Documents: 1,99 &#8364;</td>
+            </tr>
+            <tr>
+                <td>Idiomas</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Sitio web</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Redes sociales</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Descargar el Press Kit</h2>
+        <p style="margin-top: 20px;">Accede a todos los logos, capturas en HD y trailers originales en Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">IR A LA CARPETA DE DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Para solicitudes de copia de revisi&#243;n: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>El desarrollo</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT fue dise&#241;ado y desarrollado &#237;ntegramente por una sola persona. Naci&#243; del deseo de crear una experiencia m&#243;vil que respete al jugador: sin anuncios, sin compras dentro de la app, solo gameplay puro. Un juego de sigilo dise&#241;ado para controles t&#225;ctiles desde el primer d&#237;a.</p>
+            <h3 style="margin-top: 25px;">Pr&#243;ximamente</h3>
+            <p style="margin-top: 15px;">Pr&#243;ximamente: soporte para idiomas adicionales y un nuevo modo de juego: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Português (BR) (PT-BR) ═══ -->
+  <div class="lang-page" data-lang="pt-br">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Uma experi&#234;ncia stealth premium no Android. Sem an&#250;ncios. Sem contato. <span class="redacted">Sem rastro.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">BAIXAR PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Assistir ao trailer</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Descri&#231;&#227;o</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>Em <strong>ZERO CONTACT: The Secret Documents</strong>, voc&#234; assume o papel do Agente Green em uma miss&#227;o de alto risco para recuperar documentos <span class="redacted">ULTRA SECRETOS</span>.</p>
+            <br>
+            <p>O jogo adota uma abordagem "Premium First": pague uma vez, jogue para sempre. Sem interrup&#231;&#245;es de an&#250;ncios ou microtransa&#231;&#245;es.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 fases feitas &#224; m&#227;o</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>Puzzles de hacking</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>Hist&#243;ria de espionagem com di&#225;logos originais</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 melhorias e habilidades</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>Ranking entre amigos</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>Estat&#237;sticas, patentes e uniformes desbloqueáveis</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>M&#250;sica e efeitos sonoros imersivos</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>Alta rejogabilidade</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>Pixel art com modo claro e escuro</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Capturas de tela</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Ficha t&#233;cnica</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Desenvolvedor</td>
+                <td>Michele Iacubino<br>Baseado na It&#225;lia</td>
+            </tr>
+            <tr>
+                <td>Data de lan&#231;amento</td>
+                <td>6 de junho de 2026</td>
+            </tr>
+            <tr>
+                <td>Plataforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Pre&#231;o</td>
+                <td>Pr&#243;logo: Gr&#225;tis<br>The Secret Documents: R$ 10,90</td>
+            </tr>
+            <tr>
+                <td>Idiomas</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Redes sociais</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Baixar o Press Kit</h2>
+        <p style="margin-top: 20px;">Acesse todos os logos, capturas em HD e trailers originais no Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">IR PARA A PASTA DO DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Para acesso à versão para imprensa: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>O desenvolvimento</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT foi projetado e desenvolvido inteiramente por uma &#250;nica pessoa. Nasceu do desejo de criar uma experi&#234;ncia mobile que respeite o jogador: sem an&#250;ncios, sem compras no app, apenas gameplay puro. Um jogo de furtividade projetado para controles por toque desde o primeiro dia.</p>
+            <h3 style="margin-top: 25px;">Em breve</h3>
+            <p style="margin-top: 15px;">Em breve: suporte a idiomas adicionais e um novo modo de jogo: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Português (PT) (PT-PT) ═══ -->
+  <div class="lang-page" data-lang="pt-pt">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Uma experi&#234;ncia stealth premium no Android. Sem an&#250;ncios. Sem contacto. <span class="redacted">Sem rasto.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">TRANSFERIR PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Ver o trailer</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Descri&#231;&#227;o</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>Em <strong>ZERO CONTACT: The Secret Documents</strong>, assume o papel do Agente Green numa miss&#227;o de alto risco para recuperar documentos <span class="redacted">ULTRA SECRETOS</span>.</p>
+            <br>
+            <p>O jogo adota uma abordagem "Premium First": pague uma vez, jogue para sempre. Sem interrup&#231;&#245;es de an&#250;ncios ou microtransa&#231;&#245;es.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 n&#237;veis feitos &#224; m&#227;o</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>Puzzles de hacking</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>Hist&#243;ria de espionagem com di&#225;logos originais</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 melhorias e capacidades</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>Classifica&#231;&#227;o entre amigos</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>Estat&#237;sticas, patentes e uniformes desbloqueáveis</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>M&#250;sica e efeitos sonoros imersivos</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>Alta rejogabilidade</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>Pixel art com modo claro e escuro</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Capturas de ecr&#227;</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Ficha t&#233;cnica</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Programador</td>
+                <td>Michele Iacubino<br>Baseado em It&#225;lia</td>
+            </tr>
+            <tr>
+                <td>Data de lan&#231;amento</td>
+                <td>6 de junho de 2026</td>
+            </tr>
+            <tr>
+                <td>Plataforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Pre&#231;o</td>
+                <td>Pr&#243;logo: Gratuito<br>The Secret Documents: 1,99 &#8364;</td>
+            </tr>
+            <tr>
+                <td>Idiomas</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Redes sociais</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Transferir o Press Kit</h2>
+        <p style="margin-top: 20px;">Aceda a todos os logos, capturas em HD e trailers originais no Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">IR PARA A PASTA DO DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Para pedidos de c&#243;pia para an&#225;lise: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>O desenvolvimento</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT foi concebido e desenvolvido inteiramente por uma &#250;nica pessoa. Nasceu do desejo de criar uma experi&#234;ncia m&#243;vel que respeite o jogador: sem an&#250;ncios, sem compras na app, apenas gameplay puro. Um jogo de furtividade concebido para controlos t&#225;teis desde o primeiro dia.</p>
+            <h3 style="margin-top: 25px;">Em breve</h3>
+            <p style="margin-top: 15px;">Em breve: suporte a idiomas adicionais e um novo modo de jogo: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Русский (RU) ═══ -->
+  <div class="lang-page" data-lang="ru">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">&#1055;&#1088;&#1077;&#1084;&#1080;&#1072;&#1083;&#1100;&#1085;&#1099;&#1081; &#1089;&#1090;&#1077;&#1083;&#1089;-&#1086;&#1087;&#1099;&#1090; &#1085;&#1072; Android. &#1041;&#1077;&#1079; &#1088;&#1077;&#1082;&#1083;&#1072;&#1084;&#1099;. &#1041;&#1077;&#1079; &#1082;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1072;. <span class="redacted">&#1041;&#1077;&#1079; &#1089;&#1083;&#1077;&#1076;&#1072;.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">&#1057;&#1050;&#1040;&#1063;&#1040;&#1058;&#1068; &#1055;&#1056;&#1045;&#1057;&#1057;-&#1050;&#1048;&#1058;</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>&#1057;&#1084;&#1086;&#1090;&#1088;&#1077;&#1090;&#1100; &#1090;&#1088;&#1077;&#1081;&#1083;&#1077;&#1088;</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>&#1054;&#1087;&#1080;&#1089;&#1072;&#1085;&#1080;&#1077;</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>&#1042; <strong>ZERO CONTACT: The Secret Documents</strong> &#1074;&#1099; &#1073;&#1077;&#1088;&#1105;&#1090;&#1077; &#1085;&#1072; &#1089;&#1077;&#1073;&#1103; &#1088;&#1086;&#1083;&#1100; &#1040;&#1075;&#1077;&#1085;&#1090;&#1072; &#1043;&#1088;&#1080;&#1085;&#1072; &#1074; &#1086;&#1087;&#1072;&#1089;&#1085;&#1086;&#1081; &#1084;&#1080;&#1089;&#1089;&#1080;&#1080; &#1087;&#1086; &#1080;&#1079;&#1074;&#1083;&#1077;&#1095;&#1077;&#1085;&#1080;&#1102; <span class="redacted">&#1057;&#1054;&#1042;&#1045;&#1056;&#1064;&#1045;&#1053;&#1053;&#1054; &#1057;&#1045;&#1050;&#1056;&#1045;&#1058;&#1053;&#1067;&#1061;</span> &#1076;&#1086;&#1082;&#1091;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074;.</p>
+            <br>
+            <p>&#1048;&#1075;&#1088;&#1072; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090; &#1087;&#1086;&#1076;&#1093;&#1086;&#1076; &#171;Premium First&#187;: &#1079;&#1072;&#1087;&#1083;&#1072;&#1090;&#1080;&#1090;&#1077; &#1086;&#1076;&#1080;&#1085; &#1088;&#1072;&#1079; &#8212; &#1080;&#1075;&#1088;&#1072;&#1081;&#1090;&#1077; &#1085;&#1072;&#1074;&#1089;&#1077;&#1075;&#1076;&#1072;. &#1053;&#1080;&#1082;&#1072;&#1082;&#1080;&#1093; &#1088;&#1077;&#1082;&#1083;&#1072;&#1084;&#1085;&#1099;&#1093; &#1087;&#1088;&#1077;&#1088;&#1099;&#1074;&#1072;&#1085;&#1080;&#1081; &#1080; &#1084;&#1080;&#1082;&#1088;&#1086;&#1090;&#1088;&#1072;&#1085;&#1079;&#1072;&#1082;&#1094;&#1080;&#1081;.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">&#128737;&#65039; <strong>70 &#1091;&#1088;&#1086;&#1074;&#1085;&#1077;&#1081; &#1088;&#1091;&#1095;&#1085;&#1086;&#1081; &#1088;&#1072;&#1073;&#1086;&#1090;&#1099;</strong></li>
+                <li style="margin-bottom: 10px;">&#129513; <strong>&#1043;&#1086;&#1083;&#1086;&#1074;&#1086;&#1083;&#1086;&#1084;&#1082;&#1080; &#1074;&#1079;&#1083;&#1086;&#1084;&#1072;</strong></li>
+                <li style="margin-bottom: 10px;">&#128373;&#65039; <strong>&#1064;&#1087;&#1080;&#1086;&#1085;&#1089;&#1082;&#1080;&#1081; &#1089;&#1102;&#1078;&#1077;&#1090; &#1089; &#1086;&#1088;&#1080;&#1075;&#1080;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1084;&#1080; &#1076;&#1080;&#1072;&#1083;&#1086;&#1075;&#1072;&#1084;&#1080;</strong></li>
+                <li style="margin-bottom: 10px;">&#128736;&#65039; <strong>10 &#1091;&#1083;&#1091;&#1095;&#1096;&#1077;&#1085;&#1080;&#1081; &#1080; &#1089;&#1087;&#1086;&#1089;&#1086;&#1073;&#1085;&#1086;&#1089;&#1090;&#1077;&#1081;</strong></li>
+                <li style="margin-bottom: 10px;">&#127942; <strong>&#1056;&#1077;&#1081;&#1090;&#1080;&#1085;&#1075; &#1076;&#1088;&#1091;&#1079;&#1077;&#1081;</strong></li>
+                <li style="margin-bottom: 10px;">&#128202; <strong>&#1057;&#1090;&#1072;&#1090;&#1080;&#1089;&#1090;&#1080;&#1082;&#1072;, &#1086;&#1090;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1084;&#1099;&#1077; &#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1080; &#1091;&#1085;&#1080;&#1092;&#1086;&#1088;&#1084;&#1099;</strong></li>
+                <li style="margin-bottom: 10px;">&#127925; <strong>&#1040;&#1090;&#1084;&#1086;&#1089;&#1092;&#1077;&#1088;&#1085;&#1072;&#1103; &#1084;&#1091;&#1079;&#1099;&#1082;&#1072; &#1080; &#1079;&#1074;&#1091;&#1082;&#1086;&#1074;&#1099;&#1077; &#1101;&#1092;&#1092;&#1077;&#1082;&#1090;&#1099;</strong></li>
+                <li style="margin-bottom: 10px;">&#128257; <strong>&#1042;&#1099;&#1089;&#1086;&#1082;&#1072;&#1103; &#1088;&#1077;&#1080;&#1075;&#1088;&#1072;&#1073;&#1077;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1100;</strong></li>
+                <li style="margin-bottom: 10px;">&#127763; <strong>&#1055;&#1080;&#1082;&#1089;&#1077;&#1083;&#1100;-&#1072;&#1088;&#1090; &#1089;&#1086; &#1089;&#1074;&#1077;&#1090;&#1083;&#1086;&#1081; &#1080; &#1090;&#1105;&#1084;&#1085;&#1086;&#1081; &#1090;&#1077;&#1084;&#1086;&#1081;</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>&#1057;&#1082;&#1088;&#1080;&#1085;&#1096;&#1086;&#1090;&#1099;</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>&#1055;&#1088;&#1077;&#1089;&#1089;-&#1082;&#1080;&#1090;</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;</td>
+                <td>Michele Iacubino<br>&#1048;&#1090;&#1072;&#1083;&#1080;&#1103;</td>
+            </tr>
+            <tr>
+                <td>&#1044;&#1072;&#1090;&#1072; &#1074;&#1099;&#1093;&#1086;&#1076;&#1072;</td>
+                <td>6 июня 2026</td>
+            </tr>
+            <tr>
+                <td>&#1055;&#1083;&#1072;&#1090;&#1092;&#1086;&#1088;&#1084;&#1072;</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>&#1062;&#1077;&#1085;&#1072;</td>
+                <td>&#1055;&#1088;&#1086;&#1083;&#1086;&#1075;: &#1041;&#1077;&#1089;&#1087;&#1083;&#1072;&#1090;&#1085;&#1086;<br>The Secret Documents: 1,99 &#8364;</td>
+            </tr>
+            <tr>
+                <td>&#1071;&#1079;&#1099;&#1082;&#1080;</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>&#1057;&#1072;&#1081;&#1090;</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>&#1057;&#1086;&#1094;&#1089;&#1077;&#1090;&#1080;</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> &#183;
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> &#183;
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> &#183;
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> &#183;
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>&#1057;&#1082;&#1072;&#1095;&#1072;&#1090;&#1100; &#1087;&#1088;&#1077;&#1089;&#1089;-&#1082;&#1080;&#1090;</h2>
+        <p style="margin-top: 20px;">&#1042;&#1089;&#1077; &#1083;&#1086;&#1075;&#1086;&#1090;&#1080;&#1087;&#1099;, HD-&#1089;&#1082;&#1088;&#1080;&#1085;&#1096;&#1086;&#1090;&#1099; &#1080; &#1086;&#1088;&#1080;&#1075;&#1080;&#1085;&#1072;&#1083;&#1100;&#1085;&#1099;&#1077; &#1090;&#1088;&#1077;&#1081;&#1083;&#1077;&#1088;&#1099; &#1085;&#1072; Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">&#1055;&#1045;&#1056;&#1045;&#1049;&#1058;&#1048; &#1042; &#1055;&#1040;&#1055;&#1050;&#1059; DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">&#1044;&#1083;&#1103; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;&#1086;&#1074; &#1085;&#1072; &#1086;&#1073;&#1079;&#1086;&#1088;&#1085;&#1091;&#1102; &#1082;&#1086;&#1087;&#1080;&#1102;: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1082;&#1072;</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT &#1073;&#1099;&#1083; &#1087;&#1086;&#1083;&#1085;&#1086;&#1089;&#1090;&#1100;&#1102; &#1089;&#1087;&#1088;&#1086;&#1077;&#1082;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085; &#1080; &#1088;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1085; &#1086;&#1076;&#1085;&#1080;&#1084; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1086;&#1084;. &#1054;&#1085; &#1088;&#1086;&#1076;&#1080;&#1083;&#1089;&#1103; &#1080;&#1079; &#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1103; &#1089;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; &#1084;&#1086;&#1073;&#1080;&#1083;&#1100;&#1085;&#1099;&#1081; &#1086;&#1087;&#1099;&#1090;, &#1091;&#1074;&#1072;&#1078;&#1072;&#1102;&#1097;&#1080;&#1081; &#1080;&#1075;&#1088;&#1086;&#1082;&#1072;: &#1073;&#1077;&#1079; &#1088;&#1077;&#1082;&#1083;&#1072;&#1084;&#1099;, &#1073;&#1077;&#1079; &#1074;&#1085;&#1091;&#1090;&#1088;&#1080;&#1080;&#1075;&#1088;&#1086;&#1074;&#1099;&#1093; &#1087;&#1086;&#1082;&#1091;&#1087;&#1086;&#1082;, &#1090;&#1086;&#1083;&#1100;&#1082;&#1086; &#1095;&#1080;&#1089;&#1090;&#1099;&#1081; &#1075;&#1077;&#1081;&#1084;&#1087;&#1083;&#1077;&#1081;. &#1057;&#1090;&#1077;&#1083;&#1089;-&#1080;&#1075;&#1088;&#1072;, &#1089;&#1087;&#1088;&#1086;&#1077;&#1082;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1085;&#1085;&#1072;&#1103; &#1076;&#1083;&#1103; &#1089;&#1077;&#1085;&#1089;&#1086;&#1088;&#1085;&#1086;&#1075;&#1086; &#1091;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103; &#1089; &#1089;&#1072;&#1084;&#1086;&#1075;&#1086; &#1085;&#1072;&#1095;&#1072;&#1083;&#1072;.</p>
+            <h3 style="margin-top: 25px;">&#1057;&#1082;&#1086;&#1088;&#1086;</h3>
+            <p style="margin-top: 15px;">&#1057;&#1082;&#1086;&#1088;&#1086;: &#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1082;&#1072; &#1076;&#1086;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1093; &#1103;&#1079;&#1099;&#1082;&#1086;&#1074; &#1080; &#1085;&#1086;&#1074;&#1099;&#1081; &#1080;&#1075;&#1088;&#1086;&#1074;&#1086;&#1081; &#1088;&#1077;&#1078;&#1080;&#1084; &mdash; &laquo;Time Attack&raquo;.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. &#1042;&#1089;&#1077; &#1087;&#1088;&#1072;&#1074;&#1072; &#1079;&#1072;&#1097;&#1080;&#1097;&#1077;&#1085;&#1099;.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Türkçe (TR) ═══ -->
+  <div class="lang-page" data-lang="tr">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Android'de premium gizlilik deneyimi. Reklam yok. Temas yok. <span class="redacted">İz yok.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">BASIN KİTİNİ İNDİR</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Fragmanı izle</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Açıklama</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p><strong>ZERO CONTACT: The Secret Documents</strong>'da, <span class="redacted">ÇOK GİZLİ</span> belgeleri kurtarmak için yüksek riskli bir görevde Ajan Green'in yerine geçersiniz.</p>
+            <br>
+            <p>Oyun "Premium First" yaklaşımını benimser: bir kez öde, sonsuza dek oyna. Reklam kesintileri veya mikrotransaksiyonlar yok.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 el yapımı seviye</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Hacking bulmacaları</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Orijinal diyaloglarla casusluk hikayesi</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 geliştirme ve yetenek</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Arkadaş sıralaması</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>İstatistikler, açılabilir rütbeler ve üniformalar</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Sürükleyici müzik ve ses efektleri</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Yüksek tekrar oynanabilirlik</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Açık ve koyu modlu piksel sanatı</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Ekran görüntüleri</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Bilgi sayfası</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Geliştirici</td>
+                <td>Michele Iacubino<br>İtalya merkezli</td>
+            </tr>
+            <tr>
+                <td>Çıkış tarihi</td>
+                <td>6 Haziran 2026</td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Fiyat</td>
+                <td>The Prologue: Ücretsiz<br>The Secret Documents: 1,99 €</td>
+            </tr>
+            <tr>
+                <td>Diller</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Web sitesi</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Sosyal medya</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Basın kitini indir</h2>
+        <p style="margin-top: 20px;">Tüm logolara, HD ekran görüntülerine ve orijinal fragmanlara Google Drive'dan erişin.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">DRIVE KLASÖRÜNE GİT</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Basın sürümüne erişim için: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Geliştirme</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT tamamen tek bir kişi tarafından tasarlandı ve geliştirildi. Oyuncuya saygı duyan bir mobil deneyim yaratma arzusundan doğdu: reklamsız, uygulama içi satın almasız, sadece saf oynanış. İlk günden dokunmatik kontroller için tasarlanmış bir gizlilik oyunu.</p>
+            <h3 style="margin-top: 25px;">Yakında</h3>
+            <p style="margin-top: 15px;">Yakında: ek dil desteği ve yeni bir oyun modu: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ 日本語 (JA) ═══ -->
+  <div class="lang-page" data-lang="ja">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Android向けプレミアムステルス体験。広告なし。接触なし。 <span class="redacted">痕跡なし。</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">プレスキットをダウンロード</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>トレーラーを見る</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>説明</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p><strong>ZERO CONTACT: The Secret Documents</strong>では、<span class="redacted">極秘</span>文書を回収する危険なミッションでエージェント・グリーンとして活躍します。</p>
+            <br>
+            <p>本作は「Premium First」アプローチを採用：一度の購入で永遠にプレイ。広告や課金はありません。</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>手作りの70ステージ</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>ハッキングパズル</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>オリジナル対話のスパイストーリー</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10のアップグレードと能力</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>フレンドランキング</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>統計、アンロック可能なランクとユニフォーム</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>没入感のある音楽と効果音</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>高いリプレイ性</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>ライト・ダークモード対応のピクセルアート</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>スクリーンショット</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>ファクトシート</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>開発者</td>
+                <td>Michele Iacubino<br>イタリア在住</td>
+            </tr>
+            <tr>
+                <td>発売日</td>
+                <td>2026年6月6日</td>
+            </tr>
+            <tr>
+                <td>プラットフォーム</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>価格</td>
+                <td>The Prologue：無料<br>The Secret Documents：¥300</td>
+            </tr>
+            <tr>
+                <td>言語</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>ウェブサイト</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>SNS</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>プレスキットをダウンロード</h2>
+        <p style="margin-top: 20px;">すべてのロゴ、HDスクリーンショット、オリジナルトレーラーはGoogle Driveでアクセスできます。</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">DRIVEフォルダへ</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">プレス版へのアクセス： <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>開発</h3>
+            <p style="margin-top: 15px;">ZERO CONTACTは一人の人間によって完全に設計・開発されました。プレイヤーを尊重するモバイル体験を作りたいという思いから生まれました：広告なし、アプリ内課金なし、純粋なゲームプレイだけ。初日からタッチ操作のために設計されたステルスゲームです。</p>
+            <h3 style="margin-top: 25px;">近日公開</h3>
+            <p style="margin-top: 15px;">近日公開：追加言語のサポートと新しいゲームモード「Time Attack」。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. All rights reserved.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ 简体中文 (ZH-CN) ═══ -->
+  <div class="lang-page" data-lang="zh-cn">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Android上的高品质潜行体验。无广告。零接触。 <span class="redacted">零痕迹。</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">下载媒体资料包</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>观看预告片</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>描述</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>在<strong>ZERO CONTACT: The Secret Documents</strong>中，你将扮演特工Green，执行一项高风险任务以夺回<span class="redacted">绝密</span>文件。</p>
+            <br>
+            <p>本游戏采用「Premium First」理念：一次购买，永久畅玩。没有广告打断，没有微交易。</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70个手工关卡</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>黑客解谜</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>带有原创对话的间谍故事</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10种升级和能力</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>好友排行榜</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>统计数据、可解锁军衔和制服</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>沉浸式音乐和音效</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>高重玩性</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>支持浅色和深色模式的像素艺术</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>游戏截图</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>资料页</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>开发者</td>
+                <td>Michele Iacubino<br>意大利</td>
+            </tr>
+            <tr>
+                <td>发行日期</td>
+                <td>2026年6月6日</td>
+            </tr>
+            <tr>
+                <td>平台</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>价格</td>
+                <td>The Prologue：免费<br>The Secret Documents：¥15</td>
+            </tr>
+            <tr>
+                <td>语言</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>网站</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>社交媒体</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>下载媒体资料包</h2>
+        <p style="margin-top: 20px;">在Google Drive上获取所有logo、高清截图和原版预告片。</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">前往DRIVE文件夹</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">新闻版本访问： <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>开发</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT完全由一个人设计和开发。它源于创造一种尊重玩家的移动体验的愿望：无广告、无内购，只有纯粹的游戏玩法。一款从第一天起就为触控操作设计的潜行游戏。</p>
+            <h3 style="margin-top: 25px;">即将推出</h3>
+            <p style="margin-top: 15px;">即将推出：更多语言支持和全新游戏模式：“Time Attack”。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. 保留所有权利。</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ 繁體中文 (ZH-TW) ═══ -->
+  <div class="lang-page" data-lang="zh-tw">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Android上的高品質潛行體驗。無廣告。零接觸。 <span class="redacted">零痕跡。</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">下載媒體資料包</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>觀看預告片</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>描述</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>在<strong>ZERO CONTACT: The Secret Documents</strong>中，你將扮演特工Green，執行一項高風險任務以奪回<span class="redacted">絕密</span>文件。</p>
+            <br>
+            <p>本遊戲採用「Premium First」理念：一次購買，永久暢玩。沒有廣告打斷，沒有微交易。</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70個手工關卡</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>駭客解謎</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>帶有原創對話的間諜故事</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10種升級和能力</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>好友排行榜</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>統計數據、可解鎖軍銜和制服</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>沉浸式音樂和音效</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>高重玩性</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>支援淺色和深色模式的像素藝術</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>遊戲截圖</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>資料頁</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>開發者</td>
+                <td>Michele Iacubino<br>義大利</td>
+            </tr>
+            <tr>
+                <td>發行日期</td>
+                <td>2026年6月6日</td>
+            </tr>
+            <tr>
+                <td>平台</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>價格</td>
+                <td>The Prologue：免費<br>The Secret Documents：NT$60</td>
+            </tr>
+            <tr>
+                <td>語言</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>網站</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>社群媒體</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>下載媒體資料包</h2>
+        <p style="margin-top: 20px;">在Google Drive上取得所有logo、高清截圖和原版預告片。</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">前往DRIVE資料夾</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">新聞版本存取： <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>開發</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT完全由一個人設計和開發。它源於創造一種尊重玩家的行動體驗的願望：無廣告、無內購，只有純粹的遊戲玩法。一款從第一天起就為觸控操作設計的潛行遊戲。</p>
+            <h3 style="margin-top: 25px;">即將推出</h3>
+            <p style="margin-top: 15px;">即將推出：更多語言支援和全新遊戲模式：「Time Attack」。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. 保留所有權利。</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ हिन्दी (HI) ═══ -->
+  <div class="lang-page" data-lang="hi">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Android पर प्रीमियम स्टेल्थ अनुभव। कोई विज्ञापन नहीं। कोई संपर्क नहीं। <span class="redacted">कोई निशान नहीं।</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">प्रेस किट डाउनलोड करें</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>ट्रेलर देखें</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>विवरण</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p><strong>ZERO CONTACT: The Secret Documents</strong> में, आप <span class="redacted">अति गोपनीय</span> दस्तावेज़ों को पुनर्प्राप्त करने के उच्च-जोखिम मिशन पर एजेंट Green की भूमिका निभाते हैं।</p>
+            <br>
+            <p>गेम "Premium First" दृष्टिकोण अपनाता है: एक बार भुगतान करें, हमेशा खेलें। कोई विज्ञापन या माइक्रोट्रांज़ैक्शन नहीं।</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 हस्तनिर्मित स्तर</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>हैकिंग पहेलियाँ</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>मूल संवादों के साथ जासूसी कहानी</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 अपग्रेड और क्षमताएँ</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>दोस्तों की रैंकिंग</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>आँकड़े, अनलॉक करने योग्य रैंक और यूनिफॉर्म</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>इमर्सिव संगीत और ध्वनि प्रभाव</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>उच्च रीप्ले वैल्यू</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>लाइट और डार्क मोड के साथ पिक्सेल आर्ट</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>स्क्रीनशॉट</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>फैक्ट शीट</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>डेवलपर</td>
+                <td>Michele Iacubino<br>इटली में स्थित</td>
+            </tr>
+            <tr>
+                <td>रिलीज़ की तारीख</td>
+                <td>6 जून 2026</td>
+            </tr>
+            <tr>
+                <td>प्लेटफ़ॉर्म</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>कीमत</td>
+                <td>प्रोलॉग: मुफ़्त<br>The Secret Documents: ₹169</td>
+            </tr>
+            <tr>
+                <td>भाषाएँ</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>वेबसाइट</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>सोशल मीडिया</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>प्रेस किट डाउनलोड करें</h2>
+        <p style="margin-top: 20px;">Google Drive पर सभी लोगो, HD स्क्रीनशॉट और मूल ट्रेलर एक्सेस करें।</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">DRIVE फ़ोल्डर पर जाएँ</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">प्रेस संस्करण तक पहुँच के लिए: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>विकास</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT को पूरी तरह से एक ही व्यक्ति ने डिज़ाइन और विकसित किया है। यह एक ऐसा मोबाइल अनुभव बनाने की इच्छा से पैदा हुआ जो खिलाड़ी का सम्मान करे: कोई विज्ञापन नहीं, कोई इन-ऐप खरीदारी नहीं, बस शुद्ध गेमप्ले। पहले दिन से टच कंट्रोल के लिए डिज़ाइन किया गया एक स्टेल्थ गेम।</p>
+            <h3 style="margin-top: 25px;">जल्द आ रहा है</h3>
+            <p style="margin-top: 15px;">जल्द आ रहा है: अतिरिक्त भाषाओं का समर्थन और एक नया गेम मोड: "Time Attack"।</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. सर्वाधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ العربية (AR) ═══ -->
+  <div class="lang-page" data-lang="ar" dir="rtl">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">تجربة تسلل متميزة على أندرويد. بدون إعلانات. بدون اتصال. <span class="redacted">بدون أثر.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">تحميل الحقيبة الصحفية</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>شاهد العرض الترويجي</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>الوصف</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>في <strong>ZERO CONTACT: The Secret Documents</strong>، تتقمص دور العميل Green في مهمة عالية المخاطر لاستعادة وثائق <span class="redacted">سرية للغاية</span>.</p>
+            <br>
+            <p>تتبنى اللعبة نهج "Premium First": ادفع مرة واحدة، العب للأبد. لا إعلانات ولا معاملات صغيرة.</p>
+
+            <ul style="margin-top: 30px; list-style: none; padding-right: 0;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 مرحلة مصنوعة يدويًا</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>ألغاز قرصنة</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>قصة تجسس بحوارات أصلية</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 ترقيات وقدرات</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>تصنيف الأصدقاء</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>إحصائيات ورتب وأزياء قابلة للفتح</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>موسيقى ومؤثرات صوتية غامرة</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>قابلية إعادة لعب عالية</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>بيكسل آرت مع وضع فاتح وداكن</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>لقطات الشاشة</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>صحيفة المعلومات</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>المطور</td>
+                <td>Michele Iacubino<br>مقيم في إيطاليا</td>
+            </tr>
+            <tr>
+                <td>تاريخ الإصدار</td>
+                <td>6 يونيو 2026</td>
+            </tr>
+            <tr>
+                <td>المنصة</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>السعر</td>
+                <td>The Prologue: مجاني<br>The Secret Documents: 1.99 €</td>
+            </tr>
+            <tr>
+                <td>اللغات</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>الموقع</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>التواصل الاجتماعي</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2 style="border-right: none;">تحميل الحقيبة الصحفية</h2>
+        <p style="margin-top: 20px;">الوصول إلى جميع الشعارات ولقطات الشاشة عالية الدقة والعروض الترويجية الأصلية على Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">انتقل إلى مجلد DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">للوصول إلى النسخة الصحفية: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>التطوير</h3>
+            <p style="margin-top: 15px;">تم تصميم وتطوير ZERO CONTACT بالكامل بواسطة شخص واحد. وُلدت من الرغبة في إنشاء تجربة محمولة تحترم اللاعب: بدون إعلانات، بدون مشتريات داخل التطبيق، فقط لعب نقي. لعبة تسلل مصممة للتحكم باللمس منذ اليوم الأول.</p>
+            <h3 style="margin-top: 25px;">قريبًا</h3>
+            <p style="margin-top: 15px;">قريبًا: دعم لغات إضافية ووضع لعب جديد: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ اردو (UR) ═══ -->
+  <div class="lang-page" data-lang="ur" dir="rtl">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">اینڈرائیڈ پر پریمیم اسٹیلتھ تجربہ۔ کوئی اشتہار نہیں۔ کوئی رابطہ نہیں۔ <span class="redacted">کوئی نشان نہیں۔</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">پریس کٹ ڈاؤنلوڈ کریں</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>ٹریلر دیکھیں</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>تفصیل</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p><strong>ZERO CONTACT: The Secret Documents</strong> میں، آپ انتہائی خفیہ دستاویزات کو بازیاب کرانے کے اعلیٰ خطرے والے مشن پر ایجنٹ Green کا کردار ادا کرتے ہیں۔</p>
+            <br>
+            <p>یہ گیم "Premium First" نقطہ نظر اپناتا ہے: ایک بار ادائیگی کریں، ہمیشہ کھیلیں۔ کوئی اشتہارات یا مائیکروٹرانزیکشن نہیں۔</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 ہاتھ سے بنائے گئے مراحل</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>ہیکنگ پہیلیاں</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>اصل مکالموں کے ساتھ جاسوسی کہانی</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 اپ گریڈز اور صلاحیتیں</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>دوستوں کی درجہ بندی</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>اعداد و شمار، کھولنے والے درجات اور وردیاں</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>عمیق موسیقی اور صوتی اثرات</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>اعلیٰ دوبارہ کھیلنے کی صلاحیت</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>لائٹ اور ڈارک موڈ کے ساتھ پکسل آرٹ</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>اسکرین شاٹس</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>فیکٹ شیٹ</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>ڈیولپر</td>
+                <td>Michele Iacubino<br>اٹلی میں مقیم</td>
+            </tr>
+            <tr>
+                <td>ریلیز کی تاریخ</td>
+                <td>6 جون 2026</td>
+            </tr>
+            <tr>
+                <td>پلیٹ فارم</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>قیمت</td>
+                <td>The Prologue: مفت<br>The Secret Documents: 1.99 €</td>
+            </tr>
+            <tr>
+                <td>زبانیں</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>ویب سائٹ</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>سوشل میڈیا</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>پریس کٹ ڈاؤنلوڈ کریں</h2>
+        <p style="margin-top: 20px;">Google Drive پر تمام لوگو، HD اسکرین شاٹس اور اصل ٹریلرز تک رسائی حاصل کریں۔</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">DRIVE فولڈر پر جائیں</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">پریس ورژن تک رسائی کے لیے: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>ترقی</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT کو مکمل طور پر ایک شخص نے ڈیزائن اور تیار کیا۔ یہ ایک ایسا موبائل تجربہ بنانے کی خواہش سے پیدا ہوا جو کھلاڑی کا احترام کرے: کوئی اشتہارات نہیں، کوئی ایپ میں خریداری نہیں، صرف خالص گیم پلے۔ پہلے دن سے ٹچ کنٹرولز کے لیے ڈیزائن کیا گیا ایک اسٹیلتھ گیم۔</p>
+            <h3 style="margin-top: 25px;">جلد آ رہا ہے</h3>
+            <p style="margin-top: 15px;">جلد آ رہا ہے: اضافی زبانوں کی حمایت اور ایک نیا گیم موڈ: "Time Attack"۔</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. جملہ حقوق محفوظ ہیں۔</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Indonesia (ID) ═══ -->
+  <div class="lang-page" data-lang="id">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Pengalaman stealth premium di Android. Tanpa iklan. Tanpa kontak. <span class="redacted">Tanpa jejak.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">UNDUH PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Tonton trailer</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Deskripsi</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>Di <strong>ZERO CONTACT: The Secret Documents</strong>, Anda berperan sebagai Agen Green dalam misi berisiko tinggi untuk mendapatkan kembali dokumen <span class="redacted">SANGAT RAHASIA</span>.</p>
+            <br>
+            <p>Game ini mengadopsi pendekatan "Premium First": bayar sekali, mainkan selamanya. Tidak ada iklan atau mikrotransaksi.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 level buatan tangan</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Puzzle hacking</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Cerita mata-mata dengan dialog orisinal</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 peningkatan dan kemampuan</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Peringkat teman</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Statistik, pangkat dan seragam yang bisa dibuka</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Musik dan efek suara yang imersif</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Dapat dimainkan ulang</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art dengan mode terang dan gelap</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Tangkapan layar</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Lembar fakta</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Pengembang</td>
+                <td>Michele Iacubino<br>Berbasis di Italia</td>
+            </tr>
+            <tr>
+                <td>Tanggal rilis</td>
+                <td>6 Juni 2026</td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>The Prologue: Gratis<br>The Secret Documents: Rp 33.000</td>
+            </tr>
+            <tr>
+                <td>Bahasa</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Situs web</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Media sosial</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Unduh press kit</h2>
+        <p style="margin-top: 20px;">Akses semua logo, screenshot HD dan trailer orisinal di Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">BUKA FOLDER DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Untuk akses versi pers: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Pengembangan</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT dirancang dan dikembangkan sepenuhnya oleh satu orang. Lahir dari keinginan untuk menciptakan pengalaman mobile yang menghormati pemain: tanpa iklan, tanpa pembelian dalam aplikasi, hanya gameplay murni. Sebuah game stealth yang dirancang untuk kontrol sentuh sejak hari pertama.</p>
+            <h3 style="margin-top: 25px;">Segera hadir</h3>
+            <p style="margin-top: 15px;">Segera hadir: dukungan bahasa tambahan dan mode permainan baru: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Polski (PL) ═══ -->
+  <div class="lang-page" data-lang="pl">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Premiumowe doświadczenie stealth na Androidzie. Bez reklam. Bez kontaktu. <span class="redacted">Bez śladu.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">POBIERZ PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Obejrzyj zwiastun</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Opis</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>W <strong>ZERO CONTACT: The Secret Documents</strong> wcielasz się w Agenta Greena w niebezpiecznej misji odzyskania dokumentów <span class="redacted">ŚCIŚLE TAJNYCH</span>.</p>
+            <br>
+            <p>Gra stosuje podejście "Premium First": zapłać raz, graj na zawsze. Żadnych przerw reklamowych ani mikrotransakcji.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 ręcznie tworzonych poziomów</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Łamigłówki hakerskie</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Historia szpiegowska z oryginalnymi dialogami</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 ulepszeń i umiejętności</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Ranking znajomych</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Statystyki, odblokowywalne rangi i mundury</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Wciągająca muzyka i efekty dźwiękowe</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Wysoka powtarzalność</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art z jasnym i ciemnym trybem</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Zrzuty ekranu</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Karta informacyjna</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Deweloper</td>
+                <td>Michele Iacubino<br>Z siedzibą we Włoszech</td>
+            </tr>
+            <tr>
+                <td>Data premiery</td>
+                <td>6 czerwca 2026</td>
+            </tr>
+            <tr>
+                <td>Platforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Cena</td>
+                <td>The Prologue: Bezpłatnie<br>The Secret Documents: 8,99 zł</td>
+            </tr>
+            <tr>
+                <td>Języki</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Strona internetowa</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Media społecznościowe</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Pobierz press kit</h2>
+        <p style="margin-top: 20px;">Wszystkie loga, zrzuty ekranu HD i oryginalne zwiastuny na Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">PRZEJDŹ DO FOLDERU DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Aby uzyskać dostęp do wersji prasowej: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Rozwój</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT został w całości zaprojektowany i stworzony przez jedną osobę. Zrodził się z chęci stworzenia mobilnego doświadczenia, które szanuje gracza: bez reklam, bez zakupów w aplikacji, tylko czysta rozgrywka. Gra stealth zaprojektowana od pierwszego dnia pod sterowanie dotykowe.</p>
+            <h3 style="margin-top: 25px;">Wkrótce</h3>
+            <p style="margin-top: 15px;">Wkrótce: wsparcie dla dodatkowych języków i nowy tryb gry: „Time Attack“.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Shqip (SQ) ═══ -->
+  <div class="lang-page" data-lang="sq">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Përvojë premium stealth në Android. Pa reklama. Pa kontakt. <span class="redacted">Pa gjurmë.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">SHKARKO PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Shiko trailerin</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Përshkrimi</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>Në <strong>ZERO CONTACT: The Secret Documents</strong>, merrni rolin e Agjentit Green në një mision me rrezik të lartë për të rikuperuar dokumente <span class="redacted">TEPËR SEKRETE</span>.</p>
+            <br>
+            <p>Loja adopton qasjen "Premium First": paguani një herë, luani përgjithmonë. Asnjë ndërprerje reklamash apo mikrotransaksione.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 nivele të punuara me dorë</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Enigma hackimi</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Histori spiunazhi me dialogë origjinalë</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 përmirësime dhe aftësi</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Renditja e miqve</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Statistika, grada dhe uniforma të zhbllokueshme</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Muzikë dhe efekte zanore imersive</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Riluajtshmëri e lartë</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art me modalitet të ndritshëm dhe të errët</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Pamje nga ekrani</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Fletë informative</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Zhvilluesi</td>
+                <td>Michele Iacubino<br>Me bazë në Itali</td>
+            </tr>
+            <tr>
+                <td>Data e daljes</td>
+                <td>6 qershor 2026</td>
+            </tr>
+            <tr>
+                <td>Platforma</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Çmimi</td>
+                <td>The Prologue: Falas<br>The Secret Documents: 1,99 €</td>
+            </tr>
+            <tr>
+                <td>Gjuhët</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Faqja e internetit</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Rrjetet sociale</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Shkarko press kit</h2>
+        <p style="margin-top: 20px;">Aksesoni të gjitha logot, pamjet HD dhe trailerat origjinalë në Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">SHKO NË DOSJEN DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Për akses në versionin për shtypin: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Zhvillimi</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT u projektua dhe u zhvillua tërësisht nga një person i vetëm. Lindi nga dëshira për të krijuar një përvojë mobile që respekton lojtarin: pa reklama, pa blerje brenda aplikacionit, vetëm lojë e pastër. Një lojë stealth e projektuar për kontrolle me prekje që nga dita e parë.</p>
+            <h3 style="margin-top: 25px;">Së shpejti</h3>
+            <p style="margin-top: 15px;">Së shpejti: mbështetje për gjuhë shtesë dhe një mënyrë e re loje: "Time Attack".</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Të gjitha të drejtat e rezervuara.</p>
+        </div>
+    </footer>
+  </div>
+
+  <!-- ═══ Română (RO) ═══ -->
+  <div class="lang-page" data-lang="ro">
+<header class="hero">
+        <div class="container">
+            <h1>ZERO CONTACT</h1>
+            <p>THE SECRET DOCUMENTS</p>
+            <p style="margin-top: 20px;">Experiență stealth premium pe Android. Fără reclame. Fără contact. <span class="redacted">Fără urmă.</span></p>
+            <a href="javascript:void(0)" onclick="scrollToSection('download')" class="btn">DESCARCĂ PRESS KIT</a>
+        </div>
+    </header>
+
+    <section data-section="trailer" class="container">
+        <h2>Vizionează trailerul</h2>
+        <div class="video-container" style="margin-top: 30px;">
+            <iframe src="https://www.youtube.com/embed/7X7IUIsWnR8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Descriere</h2>
+        <div style="margin-top: 30px; font-size: 1.1rem; max-width: 800px;">
+            <p>În <strong>ZERO CONTACT: The Secret Documents</strong>, intri în pielea Agentului Green într-o misiune cu miză mare de a recupera documente <span class="redacted">ULTRA SECRETE</span>.</p>
+            <br>
+            <p>Jocul adoptă abordarea "Premium First": plătește o dată, joacă pentru totdeauna. Fără întreruperi publicitare sau microtranzacții.</p>
+
+            <ul style="margin-top: 30px; list-style: none;">
+                <li style="margin-bottom: 10px;">🛡️ <strong>70 de niveluri create manual</strong></li>
+                <li style="margin-bottom: 10px;">🧩 <strong>Puzzle-uri de hacking</strong></li>
+                <li style="margin-bottom: 10px;">🕵️ <strong>Poveste de spionaj cu dialoguri originale</strong></li>
+                <li style="margin-bottom: 10px;">🛠️ <strong>10 îmbunătățiri și abilități</strong></li>
+                <li style="margin-bottom: 10px;">🏆 <strong>Clasament prieteni</strong></li>
+                <li style="margin-bottom: 10px;">📊 <strong>Statistici, ranguri și uniforme deblocabile</strong></li>
+                <li style="margin-bottom: 10px;">🎵 <strong>Muzică și efecte sonore imersive</strong></li>
+                <li style="margin-bottom: 10px;">🔁 <strong>Rejucabilitate ridicată</strong></li>
+                <li style="margin-bottom: 10px;">🌓 <strong>Pixel art cu mod luminos și întunecat</strong></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Capturi de ecran</h2>
+        <div class="screenshot-grid">
+            <img src="screenshot_1.png" alt="screenshot_1.png">
+            <img src="screenshot_2.png" alt="screenshot_2.png">
+            <img src="screenshot_3.png" alt="screenshot_3.png">
+            <img src="screenshot_4.png" alt="screenshot_4.png">
+        </div>
+    </section>
+
+    <section data-section="factsheet" class="container">
+        <h2>Fișă tehnică</h2>
+        <table class="fact-sheet">
+            <tr>
+                <td>Dezvoltator</td>
+                <td>Michele Iacubino<br>Cu sediul în Italia</td>
+            </tr>
+            <tr>
+                <td>Data lansării</td>
+                <td>6 iunie 2026</td>
+            </tr>
+            <tr>
+                <td>Platformă</td>
+                <td>Android (Google Play Store)</td>
+            </tr>
+            <tr>
+                <td>Preț</td>
+                <td>The Prologue: Gratuit<br>The Secret Documents: 1,99 €</td>
+            </tr>
+            <tr>
+                <td>Limbi</td>
+                <td>EN, IT, ES, FR, DE, JA, SQ</td>
+            </tr>
+            <tr>
+                <td>Site web</td>
+                <td><a href="https://deviacubinomichele.github.io/zerocontact/main.html" style="color: var(--accent-color);">https://deviacubinomichele.github.io/zerocontact/main.html</a><br></td>
+            </tr>
+            <tr>
+                <td>Rețele sociale</td>
+                <td>
+                    <a href="https://x.com/ZeroContact_App" style="color: var(--accent-color);">X</a> ·
+                    <a href="https://www.instagram.com/zerocontact_app" style="color: var(--accent-color);">Instagram</a> ·
+                    <a href="https://www.tiktok.com/@zerocontact_app" style="color: var(--accent-color);">TikTok</a> ·
+                    <a href="https://www.youtube.com/@micheleiacubino" style="color: var(--accent-color);">YouTube</a> ·
+                    <a href="https://www.facebook.com/ZeroContactApp" style="color: var(--accent-color);">Facebook</a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section data-section="download" class="container" style="text-align: center;">
+        <h2>Descarcă press kit</h2>
+        <p style="margin-top: 20px;">Accesează toate logo-urile, capturile HD și trailerele originale pe Google Drive.</p>
+        <a href="https://drive.google.com/drive/folders/1lIQaNl4_fDwYJBXabgKDihBCbNo38naO?usp=drive_link" class="btn" target="_blank">MERGI LA FOLDERUL DRIVE</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: var(--secondary-text);">Pentru acces la versiunea de presă: <a href="mailto:dev.iacubino.michele@gmail.com" style="color: var(--accent-color);">dev.iacubino.michele@gmail.com</a></p>
+    </section>
+
+    <section class="container">
+        <div class="about-dev">
+            <h3>Dezvoltarea</h3>
+            <p style="margin-top: 15px;">ZERO CONTACT a fost conceput și dezvoltat în întregime de o singură persoană. S-a născut din dorința de a crea o experiență mobilă care respectă jucătorul: fără reclame, fără achiziții în aplicație, doar gameplay pur. Un joc stealth conceput pentru comenzi tactile încă din prima zi.</p>
+            <h3 style="margin-top: 25px;">În curând</h3>
+            <p style="margin-top: 15px;">În curând: suport pentru limbi suplimentare și un nou mod de joc: „Time Attack“.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Michele Iacubino. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+  </div>
+
+    <script>
+        // ══ Nav texts per language ══════════════════════════════════════
+        const NAV_TEXTS = {
+    "en": {
+        "trailer": "TRAILER",
+        "factsheet": "FACT SHEET",
+        "download": "DOWNLOAD"
+    },
+    "it": {
+        "trailer": "TRAILER",
+        "factsheet": "FACT SHEET",
+        "download": "DOWNLOAD"
+    },
+    "fr": {
+        "trailer": "BANDE-ANNONCE",
+        "factsheet": "FICHE TECHNIQUE",
+        "download": "T&#201;L&#201;CHARGER"
+    },
+    "de": {
+        "trailer": "TRAILER",
+        "factsheet": "FACTSHEET",
+        "download": "DOWNLOAD"
+    },
+    "es": {
+        "trailer": "TR&#193;ILER",
+        "factsheet": "FICHA T&#201;CNICA",
+        "download": "DESCARGAR"
+    },
+    "pt-br": {
+        "trailer": "TRAILER",
+        "factsheet": "FICHA T&#201;CNICA",
+        "download": "DOWNLOAD"
+    },
+    "pt-pt": {
+        "trailer": "TRAILER",
+        "factsheet": "FICHA T&#201;CNICA",
+        "download": "TRANSFERIR"
+    },
+    "ru": {
+        "trailer": "&#1058;&#1056;&#1045;&#1049;&#1051;&#1045;&#1056;",
+        "factsheet": "&#1055;&#1056;&#1045;&#1057;&#1057;-&#1050;&#1048;&#1058;",
+        "download": "&#1057;&#1050;&#1040;&#1063;&#1040;&#1058;&#1068;"
+    },
+    "tr": {
+        "trailer": "FRAGMAN",
+        "factsheet": "BİLGİ SAYFASI",
+        "download": "İNDİR"
+    },
+    "ja": {
+        "trailer": "トレーラー",
+        "factsheet": "ファクトシート",
+        "download": "ダウンロード"
+    },
+    "zh-cn": {
+        "trailer": "预告片",
+        "factsheet": "资料页",
+        "download": "下载"
+    },
+    "zh-tw": {
+        "trailer": "預告片",
+        "factsheet": "資料頁",
+        "download": "下載"
+    },
+    "hi": {
+        "trailer": "TRAILER",
+        "factsheet": "FACT SHEET",
+        "download": "DOWNLOAD"
+    },
+    "ar": {
+        "trailer": "العرض الترويجي",
+        "factsheet": "صحيفة المعلومات",
+        "download": "تحميل"
+    },
+    "ur": {
+        "trailer": "ٹریلر",
+        "factsheet": "فیکٹ شیٹ",
+        "download": "ڈاؤنلوڈ"
+    },
+    "id": {
+        "trailer": "TRAILER",
+        "factsheet": "LEMBAR FAKTA",
+        "download": "UNDUH"
+    },
+    "pl": {
+        "trailer": "ZWIASTUN",
+        "factsheet": "KARTA INFORMACYJNA",
+        "download": "POBIERZ"
+    },
+    "sq": {
+        "trailer": "TRAILER",
+        "factsheet": "FLETË INFORMATIVE",
+        "download": "SHKARKO"
+    },
+    "ro": {
+        "trailer": "TRAILER",
+        "factsheet": "FIȘĂ TEHNICĂ",
+        "download": "DESCARCĂ"
+    }
+};
+
+        // ══ RTL languages ═══════════════════════════════════════════════
+        const RTL_LANGUAGES = ['ar', 'ur'];
+
+        // ══ Language detection ══════════════════════════════════════════
+        function detectLang() {
+            const raw = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            const supported = ['en', 'it', 'fr', 'de', 'es', 'pt-br', 'pt-pt', 'ru', 'tr', 'ja', 'zh-cn', 'zh-tw', 'hi', 'ar', 'ur', 'id', 'pl', 'sq', 'ro'];
+
+            // 1. Exact match
+            const exact = supported.find(s => raw === s);
+            if (exact) return exact;
+
+            // 2. Normalized match (underscores to hyphens)
+            const normalized = raw.replace('_', '-');
+            const fullMatch = supported.find(s => normalized === s);
+            if (fullMatch) return fullMatch;
+
+            // 3. Regional variants
+            if (raw.startsWith('pt-br') || raw.startsWith('pt_br')) return 'pt-br';
+            if (raw.startsWith('pt-pt') || raw.startsWith('pt_pt')) return 'pt-pt';
+            if (raw.startsWith('pt')) return 'pt-br';
+
+            if (raw.startsWith('zh-tw') || raw.startsWith('zh_tw') || raw.startsWith('zh-hant')) return 'zh-tw';
+            if (raw.startsWith('zh')) return 'zh-cn';
+
+            // 4. Prefix match
+            const prefix = raw.split('-')[0];
+            const prefixMatch = supported.find(s => s === prefix);
+            if (prefixMatch) return prefixMatch;
+
+            return 'en';
+        }
+
+        // ══ Language switching ══════════════════════════════════════════
+        function switchLang(langCode) {
+            // Hide all language pages
+            document.querySelectorAll('.lang-page').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show selected language page
+            const page = document.querySelector('.lang-page[data-lang="' + langCode + '"]');
+            if (page) {
+                page.classList.add('active');
+            } else {
+                // Fallback to English
+                const enPage = document.querySelector('.lang-page[data-lang="en"]');
+                if (enPage) enPage.classList.add('active');
+                langCode = 'en';
+            }
+
+            // Update nav link texts
+            const navTexts = NAV_TEXTS[langCode] || NAV_TEXTS['en'];
+            document.getElementById('navTrailer').textContent = navTexts.trailer;
+            document.getElementById('navFactsheet').textContent = navTexts.factsheet;
+            document.getElementById('navDownload').textContent = navTexts.download;
+
+            // Update language selector
+            document.getElementById('langSelect').value = langCode;
+
+            // Handle RTL
+            if (RTL_LANGUAGES.includes(langCode)) {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', langCode);
+            } else {
+                document.documentElement.removeAttribute('dir');
+                document.documentElement.setAttribute('lang', langCode);
+            }
+
+            // Re-initialize scramble effect for new content
+            initScramble();
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // ══ Section scrolling ══════════════════════════════════════════
+        function scrollToSection(sectionName) {
+            const activePage = document.querySelector('.lang-page.active');
+            if (!activePage) return;
+            const target = activePage.querySelector('[data-section="' + sectionName + '"]');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // ══ Scramble effect for redacted text ══════════════════════════
+        function initScramble() {
+            const redactedElements = document.querySelectorAll('.lang-page.active .redacted');
+            redactedElements.forEach(el => {
+                // Remove old listeners by cloning
+                const newEl = el.cloneNode(true);
+                el.parentNode.replaceChild(newEl, el);
+
+                const originalText = newEl.innerText;
+                const chars = '!@#$%^&*()_+1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+                newEl.addEventListener('mouseover', () => {
+                    let iterations = 0;
+                    const interval = setInterval(() => {
+                        newEl.innerText = originalText.split('')
+                            .map((char, index) => {
+                                if (index < iterations) return originalText[index];
+                                return chars[Math.floor(Math.random() * chars.length)];
+                            })
+                            .join('');
+
+                        if (iterations >= originalText.length) clearInterval(interval);
+                        iterations += 1/3;
+                    }, 30);
+                });
+            });
+        }
+
+        // ══ Init ═══════════════════════════════════════════════════════
+        const detectedLang = detectLang();
+        switchLang(detectedLang);
+    </script>
+</body>
+</html>
